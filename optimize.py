@@ -10,9 +10,18 @@ from math import cos
 
 
 
+
 def tempFunc(a):
 
-    return sin(a)#(a**3 - 10*a**2 - 9*a + 100)/(sin(a)+2)
+    return (a**3 - 10*a**2 - 9*a + 100)/(sin(a)+2)
+
+def bad(a):
+
+    return sin(a)
+
+def good(a):
+
+    return a**2
 
 
 def optimize_step(f, bounds, n):
@@ -93,9 +102,5 @@ if __name__ == '__main__':
 
 
     test(tempFunc, bou, res)
-
-    
-##    print(optimize_step(tempFunc, bou, res))
-##    print(optimize_random(tempFunc, bou, res))
-##    print(minimize_scalar(lambda x: -tempFunc(x), bounds=bou, method='bounded'))
-##    print(count)
+    test(bad, bou, res)
+    test(good, bou, res)
